@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background:hsl(235, 18%, 26%);
+  padding: 10% 20%;
+  position: relative;
+}
+
+/* Newsletter wrapper */
+
+div#newsletter-wrapper{
+  max-width: 1440px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 24px;
+  justify-items:center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 20px 20px rgba(0,0,0,.3);
+}
+
+/* Content Side */
+div#content-side{
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+div#content-side h1{
+  font-family:  'Roboto', sans-serif;
+  font-size: 46px;
+  margin-bottom: 20px;
+}
+div#content-side p{
+  font-family: 'Robot', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+/* Menus list*/
+div#menus{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+div.menu-item{
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+div.menu-item span{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+div.menu-item img{
+  margin-right: 10px;
+}
+
+/* Subcription form*/
+form#subscribe-form div.form-group{
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+}
+div.form-group label{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+div.form-group label .label-text{  
+  font-weight: 700;
+}
+
+div.form-group label .empty-invalid{
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  margin-left: auto;
+}
+div.form-group label .empty-invalid span{
+  display: inline-block;
+}
+
+.invalid-email, .required{
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  transition: width 1s, height 1s;
+  color: hsl(4, 100%, 67%);
+  font-weight: 700;
+}
+.invalid-email.show-invalid, .required.show-required{
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
+
+div.form-group input{
+  padding: 1em 1.5em;
+  border-radius: 7px;
+  border:1px solid gray;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+div.form-group input.error{
+  background-color: rgb(255, 98, 87, .1);
+  border: 2px solid hsl(4, 100%, 67%);
+  color: hsl(4, 100%, 67%);
+  transition: color .15s, background-color, .15s, border .15s;
+}
+div.form-group button{
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 1em;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  background-color:  hsl(234, 29%, 20%);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 7px;
+  font-size: 16px;
+  transition: background-color 150ms;
+}
+div.form-group button:active{
+  background-color: hsl(4, 100%, 67%);
+  box-shadow: 0px 20px 20px rgb(255, 98, 87, .2);
+ 
+}
+
+/* Image Side */
+div.image-side{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
+  max-height: 593px;
+}
+
+div.image-side img{
+  display: block;
+}
+
+div.image-side .mobile{
+  display: none;
+}
+
+/* Success Message */
+div.success{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(235, 18%, 26%);
+  transform: scale(0);
+  /* add on clicking subsribe button */
+  transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+div.success.success-message{
+  transform: scale(1);
+}
+div.success-contents{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 2% 5% 2% 5%;
+  border-radius: 10px;
+}
+div.success-contents img{
+  width: 40px;
+  height: 40px;
+  margin-bottom:20px;
+}
+div.success-contents h1{
+  font-family: 'Roboto', sans-serif;
+  font-size: 150%;
+  font-weight: 700;
+}
+div.success-contents p{
+line-height: 1.5
+}
+div.success-contents p .useremail{
+  font-weight: 700;
+}
+div.success-contents button{
+  display: block;
+  width: 100%;
+  padding: 1.5em;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  background-color: hsl(234, 29%, 20%);
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  transform: all 15ms;
+}
+
+div.success-contents button:active{
+  background-color: hsl(4, 100%, 67%);
+  box-shadow: 0px 20px 20px rgb(255, 98, 87, .2);
+ 
+}
+/* Media Queries for responsive design */
+@media (max-width:768px){
+  body{
+    padding: 0;
+  }
+  div#newsletter-wrapper{
+    max-width: 1440px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0px;
+    justify-items:center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 20px 20px rgba(0,0,0,.3);
+    position: relative;
+  }
+
+  /* Content Side */
+  div#content-side{
+    padding: 10% 5% 5% 5%;
+    order: 2;
+  }
+  div#content-side h1{
+    font-size: 36px;
+  }
+  div#content-side p{
+    font-size: 16px;
+  }
+
+  /* Menus list*/
+  div.menu-item span{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  div.menu-item img{
+    width: 15px;
+    height: 15px;
+  }
+
+    /* Image Side */
+  div#image-side{
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    order: 1;
+  }
+  div.image-side .desktop{
+    display: none;
+  }
+  div.image-side .mobile{
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+
+  .attribution{
+    order: 3;
+    padding: 1em 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+  }
+  .attribution a{
+    font-weight: 700;
+    
+  }
+
+  /* Success Message */
+  div.success{
+    position: absolute;
+    background-color: hsl(0, 0%, 100%);
+  }
+  div.success-contents{
+    width: 100%;
+    height: 100%;
+    padding: 30% 5% 2% 5%;
+    justify-content: flex-start;
+    border-radius: 0px;
+  }
+  div.success-contents img{
+    width: 60px;
+    height: 60px;
+    margin-bottom:20px;
+  }
+  div.success-contents button{
+    margin-bottom: 50px;
+    margin-top: auto;
+  }
+}
